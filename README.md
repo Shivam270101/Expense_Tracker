@@ -399,7 +399,7 @@ This project helped strengthen practical knowledge of:
 
 Java Full Stack Developer
 
-LinkedIn: *[(Add your LinkedIn URL)](https://www.linkedin.com/in/shivamambekar27/)*
+LinkedIn: *[(Visit Profile)](https://www.linkedin.com/in/shivamambekar27/)*
 
 GitHub: https://github.com/Shivam270101
 
