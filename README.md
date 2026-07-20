@@ -52,7 +52,7 @@ Built using **Java 21, Spring Boot, React.js, MySQL, Spring AI, Ollama (Llama 3)
 
 ---
 
-## 🤖 AI Finance Assistant
+## 🤖 FinMate - AI Finance Assistant
 
 Integrated using **Spring AI + Ollama (Llama 3)**
 
