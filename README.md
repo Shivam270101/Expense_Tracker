@@ -14,7 +14,7 @@ Unlike a traditional expense tracker that simply records transactions:
 
 **FinTrack AI:**
 
-* Add Expense → Track Spending → Interact with AI Finance Assistant → Receive personalized budgeting suggestions, financial guidance, and answers to finance-related queries through a conversational interface.
+* Add Expense → Track Spending → Interact with 🤖 FinMate - AI Finance Assistant → Receive personalized budgeting suggestions, financial guidance, and answers to finance-related queries through a conversational interface.
 
 By integrating AI with personal finance management, FinTrack AI goes beyond basic CRUD operations to provide users with a smarter, more interactive, and insightful financial management experience.
 
