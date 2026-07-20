@@ -1,0 +1,100 @@
+.budget-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.budget-card-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.budget-card-actions button {
+  border: none;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.budget-card-actions button:hover {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.budget-card-actions button.danger {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.budget-card-actions button.danger:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.budget-card-bar {
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.budget-card-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.budget-card-percent {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.budget-card-stats {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.budget-card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.budget-card-stat-label {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.budget-card-stat-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}

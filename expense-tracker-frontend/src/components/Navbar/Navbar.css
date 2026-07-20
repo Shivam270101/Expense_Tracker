@@ -1,0 +1,82 @@
+.navbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #111827 0%, #1e1b4b 50%, #4f46e5 100%);
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.navbar-brand-icon {
+  font-size: 1.3rem;
+}
+
+.navbar-brand-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.navbar-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar-user-name {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navbar-logout {
+  background: transparent;
+  color: #f87171;
+  border: 1px solid #ef4444;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar-logout:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
