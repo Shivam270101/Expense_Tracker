@@ -1,54 +1,234 @@
-import { useState } from "react";
-import { askAI } from "../../services/aiService";
+import { useEffect, useRef, useState } from "react";
+import { askAI, clearConversation } from "../../services/aiService";
+import ReactMarkdown from "react-markdown";
 import "./AiChat.css";
 
-export default function AiChat() {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+const suggestions = [
+  "How much did I spend this month?",
+  "Which category has the highest expense?",
+  "Give me saving tips",
+  "How much budget is remaining?"
+];
 
-  const handleAsk = async () => {
+export default function AiChat() {
+
+  const [input, setInput] = useState("");
+
+  const [messages, setMessages] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, loading]);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+  const sendMessage = async (question) => {
+
     if (!question.trim()) return;
+
+    setMessages(prev => [
+      ...prev,
+      {
+        role: "user",
+        content: question
+      }
+    ]);
+
+    setInput("");
+
     setLoading(true);
-    setError("");
+
     try {
-      const { data } = await askAI(question);
-      setAnswer(data.response);
-    } catch (err) {
-      setError("Something went wrong. Please try again.");
+
+      const response = await askAI(question);
+
+      setMessages(prev => [
+        ...prev,
+        {
+          role: "assistant",
+          content: response.response
+        }
+      ]);
+
+    } catch {
+
+      setMessages(prev => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "Something went wrong."
+        }
+      ]);
+
     } finally {
+
       setLoading(false);
+
     }
+
+  };
+
+  const handleSubmit = () => {
+
+    sendMessage(input);
+
+  };
+
+  const handleSuggestion = (question) => {
+
+    sendMessage(question);
+
+  };
+
+  const handleNewChat = async () => {
+
+    await clearConversation();
+
+    setMessages([]);
+
+    setInput("");
+
+  };
+
+  const handleKeyDown = (e) => {
+
+    if (e.key === "Enter" && !e.shiftKey) {
+
+      e.preventDefault();
+
+      handleSubmit();
+
+    }
+
   };
 
   return (
+
     <div className="ai-chat">
-      <textarea
-        className="ai-chat-input"
-        placeholder="Ask anything about your finances..."
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        rows={4}
-      />
-      <button className="ai-chat-ask" onClick={handleAsk} disabled={loading}>
-        {loading ? "Thinking..." : "Ask AI"}
-      </button>
 
-      {loading && (
-        <div className="ai-thinking">
-          🤖 AI is thinking...
+      <div className="ai-chat-header">
+
+        <h2>🤖 FinMate - Your AI Finance Assistant</h2>
+
+        <button
+          className="new-chat-btn"
+          onClick={handleNewChat}
+        >
+          + New Chat
+        </button>
+
+      </div>
+
+      <div className="chat-body">
+
+        {messages.length === 0 && (
+
+          <div className="welcome">
+
+            <h2>👋 Welcome</h2>
+
+            <p>
+              Ask anything about your expenses,
+              budgets and savings.
+            </p>
+
+            <div className="suggestions">
+
+              {suggestions.map((item, index) => (
+
+                <button
+                  key={index}
+                  onClick={() => handleSuggestion(item)}
+                >
+                  {item}
+                </button>
+
+              ))}
+
+            </div>
+
+          </div>
+
+        )}
+
+        {messages.map((message, index) => (
+
+          <div
+            key={index}
+            className={`message ${message.role}`}
+          >
+
+            <div className="avatar">
+
+              {message.role === "user"
+                ? "👤"
+                : "🤖"}
+
+            </div>
+
+            <div className="message-content">
+                <ReactMarkdown>
+                  {message.content}
+                </ReactMarkdown>
+            </div>
+
+          </div>
+
+        ))}
+
+       {loading && (
+        <div className="message assistant">
+          <div className="avatar">🤖</div>
+          <div className="message-content thinking">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       )}
 
-      {error && <p className="ai-chat-error">{error}</p>}
+        <div ref={messagesEndRef}></div>
 
-      {answer && (
-        <div className="ai-chat-response">
-          <strong>AI Response:</strong>
-          <p>{answer}</p>
-        </div>
-      )}
+      </div>
+
+      <div className="chat-input">
+
+        <textarea
+
+          placeholder="Ask anything..."
+
+          value={input}
+
+          onChange={(e) => setInput(e.target.value)}
+
+          onKeyDown={handleKeyDown}
+
+          rows={2}
+
+        />
+
+        <button
+
+          onClick={handleSubmit}
+
+          disabled={loading}
+
+        >
+          Send
+        </button>
+
+      </div>
+
     </div>
+
   );
+
 }
