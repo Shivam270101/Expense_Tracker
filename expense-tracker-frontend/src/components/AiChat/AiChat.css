@@ -18,7 +18,7 @@
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
 }
 
 .ai-chat-header h2 {
@@ -209,7 +209,7 @@
   background: white;
   /* border-top: 1px solid #e5e7eb; */
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
 }
 
 .chat-input textarea {
