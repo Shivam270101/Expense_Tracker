@@ -2,7 +2,19 @@
 
 FinTrack AI is a modern Full Stack Personal Finance Management application that helps users efficiently manage their daily expenses, monthly budgets, and financial records. The application integrates an AI-powered Finance Assistant that provides financial guidance, budgeting tips, and answers finance-related queries through a conversational interface.
 
-Built using **Java 21, Spring Boot, React.js, MySQL, Spring AI, Ollama (Llama 3), and JWT Authentication**, the project demonstrates modern full-stack development practices and AI integration.
+What makes this project different?
+
+Instead of:
+
+Add Expense → Save → View
+
+you also have:
+
+Add Expense → AI analyzes spending → User asks finance questions → AI provides budgeting guidance
+
+That AI integration is a nice differentiator.
+
+Built using **Java 17, Spring Boot, React.js, MySQL, Spring AI, Ollama (Llama 3), and JWT Authentication**, the project demonstrates modern full-stack development practices and AI integration.
 
 ---
 
