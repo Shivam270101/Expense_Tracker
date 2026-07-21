@@ -55,6 +55,11 @@ export default function Dashboard() {
     load();
   }, [month, year]);
 
+    const totalTrendAmount = trendData.reduce(
+    (sum, item) => sum + item.totalAmount,
+    0
+  );
+
   return (
     <MainLayout>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
@@ -129,6 +134,10 @@ export default function Dashboard() {
                     </span>
                   </div>
                 ))}
+              </div>
+              <div className="chart-total">
+                <span>Total</span>
+                <span>{formatCurrency(totalTrendAmount)}</span>
               </div>
             </div>
           </div>
