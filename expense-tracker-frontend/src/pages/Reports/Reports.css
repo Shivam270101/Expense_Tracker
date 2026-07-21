@@ -1,0 +1,235 @@
+.reports-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ===========================
+   Filters
+=========================== */
+
+.report-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 18px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.report-filters div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.report-filters label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.report-filters input,
+.report-filters select {
+    min-width: 180px;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.25s ease;
+    font-size: 14px;
+}
+
+.report-filters select {
+    appearance: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 15px;
+    padding-right: 36px;
+}
+
+.report-filters input:focus,
+.report-filters select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ===========================
+   Generate Button
+=========================== */
+
+.generate-btn {
+    height: 42px;
+    padding: 0 22px;
+    background: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.generate-btn:hover:not(:disabled) {
+    background: #4338ca;
+}
+
+.generate-btn:disabled {
+    background: #a5a6f0;
+    cursor: not-allowed;
+}
+
+/* ===========================
+   Summary Cards
+=========================== */
+
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.summary-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #4f46e5;
+}
+
+.summary-card:nth-child(1)::before {
+    background: #4f46e5;
+}
+
+.summary-card:nth-child(2)::before {
+    background: #ef4444;
+}
+
+.summary-card:nth-child(3)::before {
+    background: #10b981;
+}
+
+.summary-card:nth-child(4)::before {
+    background: #f59e0b;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h4 {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.summary-card p {
+    margin-top: 12px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+.report-table thead {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.report-table th,
+.report-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.report-table tbody tr {
+    border-bottom: 1px solid #eeeeee;
+    transition: background 0.15s ease;
+}
+
+.report-table tbody tr:hover {
+    background: #f8f9ff;
+}
+
+.report-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* ===========================
+   Empty State
+=========================== */
+
+.no-report {
+    text-align: center;
+    color: #6b7280;
+    padding: 48px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.no-report-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .report-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .report-filters input,
+    .report-filters select {
+        width: 100%;
+    }
+
+    .generate-btn {
+        width: 100%;
+    }
+
+    .report-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}
