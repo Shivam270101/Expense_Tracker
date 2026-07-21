@@ -26,13 +26,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 
     // All expenses of a user
     List<Expense> findByUser(User user);
-
-    // Expenses between dates
-    List<Expense> findByUserAndExpenseDateBetween(
-            User user,
-            LocalDate startDate,
-            LocalDate endDate);
-
+   
     // Expenses by category
     List<Expense> findByUserAndCategory(
             User user,
@@ -54,8 +48,6 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     List<Expense> findByAmountLessThan(BigDecimal amount);
 
     List<Expense> findByPaymentMode(PaymentMode paymentMode);
-    
-//    List<Expense> findByUserAndCategory(User user, Category category);
     
     List<Expense> findByAmountBetween(
             BigDecimal min,
@@ -117,6 +109,59 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 		        @Param("userId") Long userId,
 		        @Param("month") Integer integer,
 		        @Param("year") Integer integer2); 
+	
+	
+	  //for Report Generation	
+	 // Expenses between dates
+	
+	List<Expense> findByUserAndExpenseDateBetween(
+            User user,
+            LocalDate fromDate,
+            LocalDate toDate);
+
+    List<Expense> findByUserAndCategory_IdAndExpenseDateBetween(
+            User user,
+            Long categoryId,
+            LocalDate fromDate,
+            LocalDate toDate);
+
+    List<Expense> findByUserAndPaymentModeAndExpenseDateBetween(
+            User user,
+            PaymentMode paymentMode,
+            LocalDate fromDate,
+            LocalDate toDate);
+
+    List<Expense> findByUserAndCategory_IdAndPaymentModeAndExpenseDateBetween(
+            User user,
+            Long categoryId,
+            PaymentMode paymentMode,
+            LocalDate fromDate,
+            LocalDate toDate);
+
+    @Query("""
+            SELECT COALESCE(SUM(e.amount),0)
+            FROM Expense e
+            WHERE e.user.id = :userId
+            AND e.expenseDate BETWEEN :fromDate AND :toDate
+            """)
+    BigDecimal getTotalExpenseBetweenDates(
+            @Param("userId") Long userId,
+            @Param("fromDate") LocalDate fromDate,
+            @Param("toDate") LocalDate toDate);
+    
+    @Query("""
+    		SELECT c.name, SUM(e.amount)
+    		FROM Expense e
+    		JOIN e.category c
+    		WHERE e.user = :user
+    		AND e.expenseDate BETWEEN :fromDate AND :toDate
+    		GROUP BY c.name
+    		ORDER BY SUM(e.amount) DESC
+    		""")
+    		List<Object[]> getCategoryWiseExpenseForReport(
+    		        @Param("user") User user,
+    		        @Param("fromDate") LocalDate fromDate,
+    		        @Param("toDate") LocalDate toDate);
     
 
 }

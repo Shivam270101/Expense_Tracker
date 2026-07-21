@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.shivam.expense_tracker.entity.Budget;
@@ -66,4 +67,28 @@ public interface BudgetRepository extends JpaRepository<Budget, Long> {
     		        Long userId,
     		        Integer month,
     		        Integer year);
+    @Query("""
+    		SELECT COALESCE(SUM(b.budgetAmount),0)
+    		FROM Budget b
+    		WHERE b.user=:user
+    		AND b.month BETWEEN :startMonth AND :endMonth
+    		AND b.year=:year
+    		""")
+    		BigDecimal getBudgetForReport(
+    		        @Param("user") User user,
+    		        @Param("startMonth") Integer startMonth,
+    		        @Param("endMonth") Integer endMonth,
+    		        @Param("year") Integer year);
+    
+    
+    List<Budget> findByUserAndYear(
+            User user,
+            Integer year
+    );
+
+    List<Budget> findByUserAndYearAndMonthIn(
+            User user,
+            Integer year,
+            List<Integer> months
+    );
 }
