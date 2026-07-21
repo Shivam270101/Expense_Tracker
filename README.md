@@ -194,7 +194,7 @@ FinTrack-AI
 ## Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/FinTrack-AI.git
+git clone https://github.com/Shivam270101/FinTrack-AI.git
 ```
 
 ---
@@ -391,7 +391,7 @@ Reports
 
 This project helped strengthen practical knowledge of:
 
-- Java 21
+- Java 17
 - Spring Boot
 - Spring Security
 - JWT Authentication
