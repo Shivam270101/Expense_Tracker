@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Environment
+.env
+.env.*
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
