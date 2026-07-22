@@ -3,11 +3,14 @@ import MainLayout from "../../components/MainLayout";
 import { PAYMENT_MODES } from "../../utils/constants";
 import { generateReport } from "../../services/reportService";
 import { getCategories } from "../../services/categoryService";
+import useAuth from "../../hooks/useAuth";
 import "./Reports.css";
 
 export default function Reports() {
 
     const today = new Date().toISOString().split("T")[0];
+
+    const { user } = useAuth();
 
     const [filters, setFilters] = useState({
         fromDate: today,
@@ -22,18 +25,29 @@ export default function Reports() {
 
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const loadCategories = async () => {
-            try {
-                const { data } = await getCategories();
-                setCategories(data);
-            } catch (error) {
-                console.error("Failed to load categories", error);
-            }
-        };
-        loadCategories();
-    }, []);
+  useEffect(() => {
 
+    const loadCategories = async () => {
+
+        try {
+
+            const response = await getCategories(user.id);
+
+            setCategories(response.data);
+
+        } catch (error) {
+
+            console.error("Failed to load categories", error);
+
+        }
+
+    };
+
+    if (user?.id) {
+        loadCategories();
+    }
+
+}, [user]);
     const handleChange = (e) => {
 
         setFilters({
@@ -219,7 +233,7 @@ export default function Reports() {
                                 <tbody>
 
                                     {
-                                        report.expenses.map(expense => (
+                                        (report.expenses ?? []).map(expense => ( (
 
                                             <tr key={expense.expenseId}>
 
@@ -235,7 +249,7 @@ export default function Reports() {
 
                                             </tr>
 
-                                        ))
+                                        )))
                                     }
 
                                 </tbody>
