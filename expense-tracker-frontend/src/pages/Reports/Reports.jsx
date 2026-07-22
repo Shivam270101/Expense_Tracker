@@ -131,19 +131,26 @@ export default function Reports() {
 
                     </div>
 
-                    <select
-                        name="paymentMode"
-                        value={filters.paymentMode}
-                        onChange={handleChange}
-                    >
-                        <option value="">All Payment Modes</option>
+                    <div>
 
-                        {PAYMENT_MODES.map((mode) => (
-                            <option key={mode.value} value={mode.value}>
-                                {mode.label}
-                            </option>
-                        ))}
-                    </select>
+                        <label>Payment mode</label>
+
+
+                        <select
+                            name="paymentMode"
+                            value={filters.paymentMode}
+                            onChange={handleChange}
+                        >
+                            <option value="">All Payment Modes</option>
+
+                            {PAYMENT_MODES.map((mode) => (
+                                <option key={mode.value} value={mode.value}>
+                                    {mode.label}
+                                </option>
+                            ))}
+                        </select>
+
+                    </div>
 
                     <button
                         className="generate-btn"
