@@ -233,3 +233,13 @@
     }
 
 }
+
+@media (max-width: 480px) {
+  .report-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .summary-card p {
+    font-size: 20px;
+  }
+}

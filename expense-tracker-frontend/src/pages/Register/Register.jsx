@@ -25,6 +25,11 @@ export default function Register() {
   return (
     <div className="auth-page">
       <div className="auth-card">
+        <div className="auth-brand">
+          <img src="src\assets\fintrack_logo.png" alt="" className="auth-brand-icon" />
+          <h1 className="auth-brand-name">FinTrack AI</h1>
+          <h4>Smart Finance, Better Future</h4>
+        </div>
         <h2>Create your account</h2>
         {error && <p className="auth-error">{error}</p>}
         <form onSubmit={handleSubmit}>

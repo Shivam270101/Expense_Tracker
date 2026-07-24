@@ -69,6 +69,7 @@ export default function Expenses() {
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
         <h2>Expenses</h2>
         <button
+          className="add-btn"
           onClick={() => {
             setEditing(null);
             setShowForm(true);

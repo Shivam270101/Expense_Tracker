@@ -13,7 +13,7 @@ export default function MonthlyTrendChart({ data = [] }) {
   if (!data.length) return <p>No trend data yet.</p>;
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={325}>
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />

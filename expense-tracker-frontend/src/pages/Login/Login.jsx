@@ -26,8 +26,9 @@ export default function Login() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-brand">
-          <span className="auth-brand-icon">💰</span>
-          <h1 className="auth-brand-name">Expense Tracker</h1>
+          <img src="src\assets\fintrack_logo.png" alt="" className="auth-brand-icon" />
+          <h1 className="auth-brand-name">FinTrack AI</h1>
+          <h4>Smart Finance, Better Future</h4>
         </div>
         <h2>Log in</h2>
         {error && <p className="auth-error">{error}</p>}

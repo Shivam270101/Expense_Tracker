@@ -41,3 +41,35 @@
     font-size: 16px;
     color: #1f2937;
 }
+
+.dashboard-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-filters {
+    width: 100%;
+  }
+
+  .dashboard-filter-select {
+    flex: 1;
+    min-width: 0;
+  }
+}

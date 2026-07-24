@@ -3,6 +3,7 @@ import MainLayout from "../../components/MainLayout";
 import BudgetCard from "../../components/BudgetCard/BudgetCard";
 import BudgetFormInline from "./BudgetFormInline";
 import useAuth from "../../hooks/useAuth";
+import "../../components/Buttons.css";
 import {
   getBudgets,
   createBudget,
@@ -60,6 +61,7 @@ export default function Budgets() {
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
         <h2>Budgets</h2>
         <button
+          className="add-btn"
           onClick={() => {
             setEditing(null);
             setShowForm(true);

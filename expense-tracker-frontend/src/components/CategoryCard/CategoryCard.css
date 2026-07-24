@@ -87,3 +87,19 @@
   background: #ef4444;
   color: #ffffff;
 }
+
+@media (max-width: 560px) {
+  .category-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .category-card-actions {
+    width: 100%;
+  }
+
+  .category-card-actions button {
+    flex: 1;
+  }
+}

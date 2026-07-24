@@ -61,3 +61,25 @@
   color: #111827;
   line-height: 1.2;
 }
+
+@media (max-width: 640px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+  }
+
+  .dashboard-card-value {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

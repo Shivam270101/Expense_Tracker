@@ -4,23 +4,25 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: linear-gradient(135deg, #111827 0%, #1e1b4b 50%, #4f46e5 100%);
+  background: #111827;
   border-bottom: 1px solid #1f2937;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   font-family: "Poppins", "Segoe UI", sans-serif;
+  box-sizing: border-box;
 }
 
 .navbar-brand {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 8px;
-  color: #ffffff;
+  flex-shrink: 0;
 }
 
 .navbar-brand-icon {
   font-size: 1.3rem;
+  line-height: 1;
 }
 
 .navbar-brand-name {
@@ -28,19 +30,21 @@
   font-size: 1.15rem;
   color: #ffffff;
   letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .navbar-user {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
 }
 
 .navbar-user-avatar {
@@ -55,12 +59,15 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .navbar-user-name {
   color: #9ca3af;
   font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .navbar-logout {
@@ -73,10 +80,60 @@
   font-size: 0.85rem;
   font-weight: 500;
   font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
 .navbar-logout:hover {
   background: #ef4444;
   color: #ffffff;
+}
+
+.navbar-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============ Responsive ============ */
+
+@media (max-width: 900px) {
+  .navbar-menu-btn {
+    display: flex;
+  }
+
+  .navbar-logout {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .navbar-brand-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar-user-name {
+    display: none;
+  }
+
+  .navbar-logout {
+    display: none;
+  }
+
+  .navbar-logout {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
 }

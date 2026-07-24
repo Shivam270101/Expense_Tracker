@@ -59,6 +59,7 @@ const handleSubmit = async (data) => {
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
         <h2>Categories</h2>
         <button
+          className="add-btn"
           onClick={() => {
             setEditing(null);
             setShowForm(true);

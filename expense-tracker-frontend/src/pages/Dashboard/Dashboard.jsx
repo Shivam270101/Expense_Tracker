@@ -62,7 +62,7 @@ export default function Dashboard() {
 
   return (
     <MainLayout>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+      <div className="dashboard-header-row">
         <h2>Dashboard</h2>
         <div className="dashboard-filters">
           <select
@@ -97,7 +97,7 @@ export default function Dashboard() {
       ) : (
         <>
           <DashboardCards summary={summary} />
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="dashboard-charts-grid">
             <div className="chart-card">
               <h3>Spending by Category</h3>
               <SpendingPieChart data={categoryData} />

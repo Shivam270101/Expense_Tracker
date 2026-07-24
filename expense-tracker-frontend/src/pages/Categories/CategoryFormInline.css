@@ -95,3 +95,10 @@
 .category-form-actions button[type="button"]:hover {
   background: #e5e7eb;
 }
+
+@media (max-width: 560px) {
+  .category-form{
+    max-width: 100%;
+    padding: 18px;
+  }
+}

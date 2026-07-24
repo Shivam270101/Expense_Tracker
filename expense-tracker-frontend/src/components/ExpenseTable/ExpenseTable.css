@@ -98,3 +98,14 @@
   border-radius: 12px;
   border: 1px solid #e5e7eb;
 }
+
+@media (max-width: 900px) {
+  .expense-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .expense-table {
+    min-width: 640px;
+  }
+}

@@ -91,3 +91,23 @@
 .expense-form-actions button.secondary:hover {
   background: #e5e7eb;
 }
+
+@media (max-width: 560px) {
+  .expense-form {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .expense-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .expense-form-actions {
+    flex-direction: column;
+  }
+
+  .expense-form-actions button {
+    width: 100%;
+  }
+}

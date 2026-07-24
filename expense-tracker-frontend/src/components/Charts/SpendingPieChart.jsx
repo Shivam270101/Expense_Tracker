@@ -10,7 +10,7 @@ export default function SpendingPieChart({ data = [] }) {
   if (!data.length) return <p>No category spending data yet.</p>;
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={325}>
       <PieChart>
         <Pie
           data={data}
