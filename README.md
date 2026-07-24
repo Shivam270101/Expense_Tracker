@@ -424,3 +424,26 @@ GitHub: https://github.com/Shivam270101
 # ⭐ Support
 
 If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+# 👨‍💻 UI Review
+Dashboard
+<img width="1897" height="911" alt="Screenshot 2026-07-23 103141" src="https://github.com/user-attachments/assets/12699d53-c95c-4988-9b25-c0a03739147e" />
+
+Add Categories
+<img width="1897" height="910" alt="Screenshot 2026-07-23 103157" src="https://github.com/user-attachments/assets/e0d6b07d-6a03-45b2-876a-f4951fc2cf46" />
+
+Add Expenses
+<img width="1900" height="907" alt="Screenshot 2026-07-23 103225" src="https://github.com/user-attachments/assets/efe62d97-8a1e-4672-90d6-dc1315bbd091" />
+
+Allocate the Budget for every month
+<img width="1897" height="912" alt="Screenshot 2026-07-23 103248" src="https://github.com/user-attachments/assets/5c69d1fd-fd4f-433b-9451-3b7dd4017740" />
+
+Expense Reports
+<img width="1901" height="911" alt="Screenshot 2026-07-23 103118" src="https://github.com/user-attachments/assets/808da31c-5f6d-42cc-95ab-076ec23a1838" />
+
+FinMate AI Finance Assistant
+<img width="1900" height="907" alt="image" src="https://github.com/user-attachments/assets/00c75fb7-f198-43f4-a67f-e22e0169c152" />
+
+
+
+
