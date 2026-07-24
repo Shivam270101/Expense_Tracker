@@ -394,8 +394,8 @@ export default function Home() {
                     <p>Made with React, Spring Boot &amp; Spring AI</p>
                 </div>
                 <div className="footer-links">
-                    <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="https://github.com/Shivam270101" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/shivamambekar27/" target="_blank" rel="noreferrer">LinkedIn</a>
                     <a href="mailto:shivamambekar027@gmail.com">Contact</a>
                 </div>
                 </div>
