@@ -1,8 +1,10 @@
 .add-btn {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   gap: 8px;
   padding: 10px 20px;
+  height: 42px;
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: #ffffff;
   border: none;

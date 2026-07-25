@@ -63,7 +63,10 @@ export default function Dashboard() {
   return (
     <MainLayout>
       <div className="dashboard-header-row">
-        <h2>Dashboard</h2>
+        <div>
+          <h2>Dashboard</h2>
+          <p className="page-subtitle">A live snapshot of your spending, budget, and trends.</p>
+        </div>
         <div className="dashboard-filters">
           <select
             className="dashboard-filter-select"

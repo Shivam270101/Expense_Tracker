@@ -116,14 +116,12 @@ export default function AiChat() {
 
       <div className="ai-chat-header">
 
-        <h2>🤖 FinMate - Your AI Finance Assistant</h2>
-
-        <button
-          className="new-chat-btn"
-          onClick={handleNewChat}
-        >
-          + New Chat
-        </button>
+        <div>
+          <h2>🤖 FinMate - Your AI Finance Assistant</h2>
+          <p className="page-subtitle" style={{ textAlign: "center", margin: "4px 0 0" }}>
+            Ask questions about your money and get instant answers.
+          </p>
+        </div>
 
       </div>
 
@@ -214,16 +212,17 @@ export default function AiChat() {
           rows={2}
 
         />
-
-        <button
-
-          onClick={handleSubmit}
-
-          disabled={loading}
-
-        >
+        <div className="chat-input-actions">
+          <button
+            className="new-chat-btn"
+            onClick={handleNewChat}
+          >
+            + New Chat
+          </button>
+         <button className="send-btn" onClick={handleSubmit} disabled={loading}>
           Send
         </button>
+        </div>
 
       </div>
 

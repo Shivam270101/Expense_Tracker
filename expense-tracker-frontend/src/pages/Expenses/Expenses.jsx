@@ -67,7 +67,12 @@ export default function Expenses() {
   return (
     <MainLayout>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-        <h2>Expenses</h2>
+        <div>
+          <h2>Expenses</h2>
+          <p className="page-subtitle" style={{ margin: "4px 0 0" }}>
+            Log, edit, and review every expense you've recorded.
+          </p>
+        </div>
         <button
           className="add-btn"
           onClick={() => {

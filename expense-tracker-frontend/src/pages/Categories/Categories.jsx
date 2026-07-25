@@ -57,7 +57,10 @@ const handleSubmit = async (data) => {
   return (
     <MainLayout>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-        <h2>Categories</h2>
+        <div>
+          <h2>Categories</h2>
+          <p className="page-subtitle">Organize your spending into categories that make sense to you.</p>
+        </div>
         <button
           className="add-btn"
           onClick={() => {

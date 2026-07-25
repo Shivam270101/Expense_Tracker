@@ -6,7 +6,10 @@ export default function Profile() {
 
   return (
     <MainLayout>
-      <h2>Profile</h2>
+      <div>
+        <h2>Profile</h2>
+        <p className="page-subtitle">View and update your account details.</p>
+      </div>
       <div
         style={{
           background: "#fff",

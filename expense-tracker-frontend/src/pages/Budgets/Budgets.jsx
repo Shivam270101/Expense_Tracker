@@ -58,8 +58,11 @@ export default function Budgets() {
 
   return (
     <MainLayout>
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+        <div>
         <h2>Budgets</h2>
+        <p className="page-subtitle">Set monthly limits and track how close you are to them.</p>
+        </div>
         <button
           className="add-btn"
           onClick={() => {

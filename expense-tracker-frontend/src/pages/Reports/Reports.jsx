@@ -93,9 +93,10 @@ export default function Reports() {
         <MainLayout>
 
             <div className="reports-page">
-
-                <h2>Expense Reports</h2>
-
+                <div>
+                    <h2>Expense Reports</h2>
+                    <p className="page-subtitle">Filter by date, category, or payment mode to generate a detailed report.</p>
+                </div>
                 <div className="report-filters">
 
                     <div>
