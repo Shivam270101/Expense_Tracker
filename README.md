@@ -426,6 +426,8 @@ GitHub: https://github.com/Shivam270101
 If you found this project useful, please consider giving it a ⭐ on GitHub.
 
 # 👨‍💻 UI Review
+<img width="1897" height="905" alt="image" src="https://github.com/user-attachments/assets/2a419b1d-05d1-49e4-a5ea-203c575d60d0" />
+
 Dashboard
 <img width="1897" height="911" alt="Screenshot 2026-07-23 103141" src="https://github.com/user-attachments/assets/12699d53-c95c-4988-9b25-c0a03739147e" />
 
