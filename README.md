@@ -442,7 +442,9 @@ Expense Reports
 <img width="1901" height="911" alt="Screenshot 2026-07-23 103118" src="https://github.com/user-attachments/assets/808da31c-5f6d-42cc-95ab-076ec23a1838" />
 
 FinMate AI Finance Assistant
-<img width="1900" height="907" alt="image" src="https://github.com/user-attachments/assets/00c75fb7-f198-43f4-a67f-e22e0169c152" />
+<img width="1902" height="912" alt="image" src="https://github.com/user-attachments/assets/7a2c16c5-424e-4c76-a760-c98ed92e7fc9" />
+
+
 
 
 
