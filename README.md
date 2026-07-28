@@ -425,6 +425,9 @@ GitHub: https://github.com/Shivam270101
 
 If you found this project useful, please consider giving it a ⭐ on GitHub.
 
+# ⭐ Project Architecture
+<img width="1547" height="1038" alt="Screenshot 2026-07-28 121846" src="https://github.com/user-attachments/assets/b10aaa8b-3154-4317-b5b3-09ae70febd30" />
+
 # 👨‍💻 UI Review
 <img width="1897" height="905" alt="image" src="https://github.com/user-attachments/assets/2a419b1d-05d1-49e4-a5ea-203c575d60d0" />
 
